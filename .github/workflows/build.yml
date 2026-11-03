@@ -23,7 +23,11 @@ jobs:
           gradle build --no-daemon --console=plain 2>&1 | tee build.log
       - name: Show build errors
         if: failure()
-        run: tail -n 80 build.log | sed 's/^/::error::/'
+        run: |
+          msg=$(sed -n '/What went wrong/,$p' build.log | head -n 40)
+          [ -z "$msg" ] && msg=$(tail -n 40 build.log)
+          msg=$(printf '%s' "$msg" | tr '\n' '|' | cut -c1-6000)
+          echo "::error::$msg"
       - uses: actions/upload-artifact@v4
         if: success()
         with:
