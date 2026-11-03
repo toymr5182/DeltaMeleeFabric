@@ -17,8 +17,15 @@ jobs:
       - uses: gradle/actions/setup-gradle@v4
         with:
           gradle-version: current
-      - run: gradle build --no-daemon
+      - name: Build
+        run: |
+          set -o pipefail
+          gradle build --no-daemon --console=plain 2>&1 | tee build.log
+      - name: Show build errors
+        if: failure()
+        run: tail -n 80 build.log | sed 's/^/::error::/'
       - uses: actions/upload-artifact@v4
+        if: success()
         with:
           name: delta-melee-fabric
           path: build/libs/*.jar
