@@ -11,11 +11,9 @@ import java.util.function.Consumer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.SubmitNodeCollector;
 import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.special.NoDataSpecialModelRenderer;
 import net.minecraft.client.renderer.special.SpecialModelRenderer;
 import net.minecraft.resources.Identifier;
-import net.minecraft.world.item.ItemDisplayContext;
-import net.minecraft.world.item.ItemStack;
-import org.jspecify.annotations.Nullable;
 import org.joml.Vector3fc;
 
 /**
@@ -23,16 +21,16 @@ import org.joml.Vector3fc;
  * NOTE: written against the 1.21.9+/26.x special-model API without being able to compile it here;
  * if the compiler complains, the fixes are mostly package names / small signature differences.
  */
-public final class GeoSpecialRenderer implements SpecialModelRenderer<Void> {
+public final class GeoSpecialRenderer implements NoDataSpecialModelRenderer {
     private final GeoModel model;
     private final Identifier texture;
 
     GeoSpecialRenderer(GeoModel model, Identifier texture) { this.model = model; this.texture = texture; }
 
     @Override
-    public void submit(@Nullable Void arg, ItemDisplayContext ctx, PoseStack pose, SubmitNodeCollector out,
+    public void submit(PoseStack pose, SubmitNodeCollector out,
                        int light, int overlay, boolean foil, int outlineColor) {
-        out.submitCustomGeometry(pose, RenderTypes.entityCutoutNoCull(texture), (p, vc) -> {
+        out.submitCustomGeometry(pose, RenderTypes.entityCutout(texture), (p, vc) -> {
             for (float[] q : model.quads) {
                 for (int i = 0; i < 4; i++) {
                     vc.addVertex(p, q[i*5], q[i*5+1], q[i*5+2])
@@ -52,15 +50,12 @@ public final class GeoSpecialRenderer implements SpecialModelRenderer<Void> {
                     out.accept(new org.joml.Vector3f(x, y, z));
     }
 
-    @Override
-    public @Nullable Void extractArgument(ItemStack stack) { return null; }
-
-    public record Unbaked(String id) implements SpecialModelRenderer.Unbaked {
+    public record Unbaked(String id) implements SpecialModelRenderer.Unbaked<Void> {
         public static final MapCodec<Unbaked> MAP_CODEC = RecordCodecBuilder.mapCodec(i ->
             i.group(Codec.STRING.fieldOf("id").forGetter(Unbaked::id)).apply(i, Unbaked::new));
 
         @Override
-        public @Nullable SpecialModelRenderer<?> bake(SpecialModelRenderer.BakingContext ctx) {
+        public SpecialModelRenderer<Void> bake(SpecialModelRenderer.BakingContext ctx) {
             var rm = Minecraft.getInstance().getResourceManager();
             Identifier geo = Identifier.fromNamespaceAndPath(DeltaMeleeClient.ID, "geo_models/melee/" + id + "_geo.json");
             try (Reader r = new java.io.InputStreamReader(rm.getResourceOrThrow(geo).open(), StandardCharsets.UTF_8)) {
