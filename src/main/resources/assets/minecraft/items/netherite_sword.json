@@ -1,0 +1,266 @@
+{
+  "model": {
+    "type": "minecraft:select",
+    "property": "minecraft:component",
+    "component": "minecraft:custom_name",
+    "cases": [
+      {
+        "when": "mercy",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "mercy"
+          }
+        }
+      },
+      {
+        "when": "Mercy",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "mercy"
+          }
+        }
+      },
+      {
+        "when": "Fiery Owl",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "shadowkiller"
+          }
+        }
+      },
+      {
+        "when": "shadowkiller",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "shadowkiller"
+          }
+        }
+      },
+      {
+        "when": "polaris",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "polaris"
+          }
+        }
+      },
+      {
+        "when": "Desmoulins' Edge",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "polaris"
+          }
+        }
+      },
+      {
+        "when": "silencefd",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "silencefd"
+          }
+        }
+      },
+      {
+        "when": "TAC Dagger",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "silencefd"
+          }
+        }
+      },
+      {
+        "when": "Sea Gleam",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "thieve_sea"
+          }
+        }
+      },
+      {
+        "when": "thieve_sea",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "thieve_sea"
+          }
+        }
+      },
+      {
+        "when": "Cobra Vanguard",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "cobra_vanguard"
+          }
+        }
+      },
+      {
+        "when": "cobra_vanguard",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "cobra_vanguard"
+          }
+        }
+      },
+      {
+        "when": "Creed",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "treasure_kn"
+          }
+        }
+      },
+      {
+        "when": "treasure_kn",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "treasure_kn"
+          }
+        }
+      },
+      {
+        "when": "quenching",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "quenching"
+          }
+        }
+      },
+      {
+        "when": "Dragon's Fang",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "quenching"
+          }
+        }
+      },
+      {
+        "when": "annihil",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "annihil"
+          }
+        }
+      },
+      {
+        "when": "Dark Star",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "annihil"
+          }
+        }
+      },
+      {
+        "when": "Executor",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "executor"
+          }
+        }
+      },
+      {
+        "when": "executor",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "executor"
+          }
+        }
+      },
+      {
+        "when": "null_annihil",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "null_annihil"
+          }
+        }
+      },
+      {
+        "when": "Free Dark Star",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "null_annihil"
+          }
+        }
+      },
+      {
+        "when": "\"Free Dark Star\"",
+        "model": {
+          "type": "minecraft:special",
+          "base": "minecraft:item/netherite_sword",
+          "model": {
+            "type": "delta_wt:geo",
+            "id": "null_annihil"
+          }
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/netherite_sword"
+    }
+  }
+}

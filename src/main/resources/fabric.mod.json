@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "delta_wt",
+  "version": "0.1.0",
+  "name": "DeltaForce Melee Models (Fabric)",
+  "description": "Rename a diamond/netherite sword in an anvil to swap its model.",
+  "authors": [
+    "Port of LesRaisins Studio pack"
+  ],
+  "license": "All Rights Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "delta.melee.DeltaMeleeClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.9",
+    "minecraft": "~26.3",
+    "java": ">=25"
+  }
+}
